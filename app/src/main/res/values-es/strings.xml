@@ -2,5 +2,5 @@
 <resources>
     <string name="name">Nombre</string>
     <string name="passsword">Contraseña</string>
-    <string name="signIn">Iniciar Session</string>
+    <string name="signIn">Iniciar sesión</string>
 </resources>
