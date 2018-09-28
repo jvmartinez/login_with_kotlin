@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">login</string>
+    <string name="name">Name</string>
+    <string name="passsword">Password</string>
+    <string name="signIn">Sign In</string>
+    <string name="todo">TODO</string>
+</resources>
