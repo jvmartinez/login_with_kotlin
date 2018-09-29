@@ -1,4 +1,4 @@
-package jvmartinez.com.login
+package jvmartinez.com.ui.login
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
@@ -17,7 +17,7 @@ import org.junit.Assert.*
 class ExampleInstrumentedTest {
     @Test
     fun useAppContext() {
-        // Context of the app under test.
+        // Context of the App under test.
         val appContext = InstrumentationRegistry.getTargetContext()
         assertEquals("jvmartinez.com.login", appContext.packageName)
     }

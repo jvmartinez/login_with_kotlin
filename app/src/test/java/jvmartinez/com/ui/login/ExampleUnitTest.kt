@@ -1,4 +1,4 @@
-package jvmartinez.com.login
+package jvmartinez.com.ui.login
 
 import org.junit.Test
 
