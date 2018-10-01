@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="email">Correo electronico</string>
+    <string name="passsword">Contraseña</string>
+    <string name="signIn">Iniciar sesión</string>
+
+    <!--Alert Dialog-->
+    <string name="accept">ACEPTAR</string>
+    <string name="cancel">CANCELAR</string>
+
+    <!--Message login-->
+    <string name="error_login">Credenciales incorrectas.</string>
+</resources>
