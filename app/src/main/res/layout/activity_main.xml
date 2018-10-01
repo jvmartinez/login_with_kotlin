@@ -32,44 +32,36 @@
                 tools:ignore="VectorDrawableCompat" />
 
             <EditText
-                android:id="@+id/txtName"
+                android:id="@+id/txt_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
                 android:background="@drawable/edit_text_background"
                 android:drawableStart="@drawable/ic_assignment_ind_green_24dp"
                 android:drawableLeft="@drawable/ic_assignment_ind_green_24dp"
-                android:ems="10"
-                android:hint="@string/name"
-                android:inputType="textPersonName"
-                android:padding="10dp" />
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                style="@style/AppTheme.InputText"
+                />
 
             <EditText
-                android:id="@+id/txtPassword"
+                android:id="@+id/txt_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/edit_text_background"
                 android:drawableStart="@drawable/ic_keyboard_green_24dp"
                 android:drawableLeft="@drawable/ic_keyboard_green_24dp"
-                android:ems="10"
                 android:hint="@string/passsword"
                 android:inputType="textPassword"
-                android:padding="10dp" />
+                style="@style/AppTheme.InputText" />
 
             <Button
                 android:id="@+id/btn_signIn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/button_selector"
+                style="@style/AppTheme.button"
                 android:drawableStart="@drawable/ic_fingerprint_white_24dp"
                 android:drawableLeft="@drawable/ic_fingerprint_white_24dp"
-                android:padding="15dp"
                 android:text="@string/signIn"
-                android:textColor="@color/colorWhite" />
+                />
 
         </LinearLayout>
     </ScrollView>

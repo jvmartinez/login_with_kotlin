@@ -1,5 +1,7 @@
 package jvmartinez.com.ui.login
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -7,6 +9,11 @@ import android.widget.EditText
 import dagger.android.AndroidInjection
 import jvmartinez.com.ui.base.BaseActivity
 import javax.inject.Inject
+import android.text.Editable
+import jvmartinez.com.ui.login.LoginInterface.presenter
+import android.text.TextWatcher
+import android.widget.Toast
+
 
 /**
  * @author Juan Martinez
@@ -33,7 +40,11 @@ class LoginActivity : BaseActivity(), LoginInterface.view, View.OnClickListener 
         super.onCreate(savedInstanceState)
         AndroidInjection.inject(this)
         setContentView(R.layout.activity_main)
+        this.btnSignIn = findViewById(R.id.btn_signIn)
+        this.txtEmail = findViewById(R.id.txt_email)
+        this.txtPassword = findViewById(R.id.txt_password)
         presenter.onAttch(this)
+        startActionListener()
     }
 
     override fun toggleButtonState(isEnable: Boolean) {
@@ -42,19 +53,48 @@ class LoginActivity : BaseActivity(), LoginInterface.view, View.OnClickListener 
 
     fun startActionListener() {
         btnSignIn.setOnClickListener(this)
+        txtEmail.addTextChangedListener(onEmailTextChanged)
+        txtPassword.addTextChangedListener(onPasswordTextChanged)
     }
 
-    override fun onClick(v: View?) {
-        if (v != null) {
-            when (v.id) {
-                R.id.btn_signIn -> {
-                    presenter.verifyLogin(txtEmail.text.toString(), txtPassword.text.toString())
-                }
-            }
+    private val onEmailTextChanged = object : TextWatcher {
+        override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
+
+        }
+
+        override fun onTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
+            presenter.emailTextChange(charSequence.toString())
+        }
+
+        override fun afterTextChanged(editable: Editable) {
+
         }
     }
 
-    override fun showHome() {
+    private val onPasswordTextChanged = object : TextWatcher {
+        override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
 
+        }
+
+        override fun onTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
+            presenter.passwordTextChange(charSequence.toString())
+        }
+
+        override fun afterTextChanged(editable: Editable) {
+
+        }
+    }
+
+    override fun onClick(v: View?) {
+            when (v?.id) {
+                R.id.btn_signIn -> {
+                    hideKeyboard()
+                    presenter.verifyLogin(txtEmail.text.toString(), txtPassword.text.toString())
+                }
+            }
+    }
+
+    override fun showHome() {
+        Intent(this, LoginActivity::class.java)
     }
 }

@@ -1,5 +1,6 @@
 package jvmartinez.com.ui.login
 
+import android.util.Log
 import jvmartinez.com.ui.base.BasePresenter
 import javax.inject.Inject
 
@@ -7,22 +8,31 @@ import javax.inject.Inject
  * @author Juan Martinez
  */
 
-class LoginPresenter<V: LoginInterface.view> @Inject internal constructor() : BasePresenter<V>(), LoginInterface.presenter<V> {
+class LoginPresenter<V: LoginInterface.view> @Inject internal constructor(private var view: V) : BasePresenter<V>(), LoginInterface.presenter<V> {
+//    private lateinit var view: LoginInterface.view
+    private var email: String = ""
+    private var password: String = ""
 
-
-    override fun emailTextChange(charSequence: CharSequence) {
-
+    override fun onAttch(view: V?) {
+        super.onAttch(view)
+        this.view?.toggleButtonState(false)
     }
 
-    override fun passwordTextChange(charSequence: CharSequence) {
+    override fun emailTextChange(charSequence: String) {
+        email = charSequence
+        view?.toggleButtonState(!charSequence.isEmpty() && !password.isEmpty())
+    }
 
+    override fun passwordTextChange(charSequence: String) {
+        password = charSequence
+        view?.toggleButtonState(!charSequence.isEmpty() && !email.isEmpty())
     }
 
     override fun verifyLogin(email: String, password: String) {
-
-        getView()?.hideKeyboard()
-        if (email.equals("prueba") && password.equals("123456")) {
+        if (email == "prueba@prueba.com" && password == "123456") {
             getView()?.showHome()
+        } else {
+            getView()?.showMessage(R.string.error_login)
         }
     }
 }

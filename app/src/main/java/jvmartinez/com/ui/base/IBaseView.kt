@@ -9,4 +9,6 @@ interface IBaseView {
     fun hideLoading()
 
     fun hideKeyboard()
+
+    fun showMessage(message: Int)
 }

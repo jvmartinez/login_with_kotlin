@@ -1,7 +1,14 @@
 <resources>
     <string name="app_name">login</string>
-    <string name="name">Name</string>
+    <string name="email">E-mail</string>
     <string name="passsword">Password</string>
     <string name="signIn">Sign In</string>
     <string name="todo">TODO</string>
+
+    <!--Alert Dialog-->
+    <string name="accept">Ok</string>
+    <string name="cancel">Cancel</string>
+
+    <!--Message login-->
+    <string name="error_login">Bad credentials</string>
 </resources>

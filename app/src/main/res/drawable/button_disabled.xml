@@ -3,12 +3,12 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:top="4dp">
         <shape>
-            <solid android:color="@color/colorButtonPrimary" />
+            <solid android:color="@color/colorButtonPress" />
         </shape>
     </item>
     <item android:bottom="4dp">
         <shape>
-            <solid android:color="@color/colorButtonPrimary" />
+            <solid android:color="@color/colorButtonPress" />
         </shape>
     </item>
 </layer-list>

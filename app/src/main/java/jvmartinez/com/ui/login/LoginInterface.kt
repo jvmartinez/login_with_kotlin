@@ -15,8 +15,8 @@ interface LoginInterface {
     }
 
     interface presenter<V: view>: IBasePresenter<V> {
-        fun emailTextChange(charSequence: CharSequence)
-        fun passwordTextChange(charSequence: CharSequence)
+        fun emailTextChange(charSequence: String)
+        fun passwordTextChange(charSequence: String)
         fun verifyLogin(email: String, password: String)
     }
 }

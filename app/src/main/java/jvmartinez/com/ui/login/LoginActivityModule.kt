@@ -1,5 +1,6 @@
 package jvmartinez.com.ui.login
 
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 
@@ -8,13 +9,13 @@ import dagger.Provides
  */
 
 @Module
-class LoginActivityModule {
+abstract class LoginActivityModule {
 
-    @Provides
-    internal fun provideLoginView(loginActivity: LoginActivity): LoginInterface.view = loginActivity
+    @Binds
+    abstract fun provideLoginView(loginActivity: LoginActivity): LoginInterface.view
 
-    @Provides
-    internal fun provideLoginPresenter(presenter: LoginPresenter<LoginInterface.view>):
-            LoginInterface.presenter<LoginInterface.view> = presenter
+    @Binds
+    abstract fun provideLoginPresenter(presenter: LoginPresenter<LoginInterface.view>):
+            LoginInterface.presenter<LoginInterface.view>
 
 }
