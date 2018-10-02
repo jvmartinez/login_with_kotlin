@@ -1,6 +1,5 @@
 package jvmartinez.com.ui.login
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -10,9 +9,7 @@ import dagger.android.AndroidInjection
 import jvmartinez.com.ui.base.BaseActivity
 import javax.inject.Inject
 import android.text.Editable
-import jvmartinez.com.ui.login.LoginInterface.presenter
 import android.text.TextWatcher
-import android.widget.Toast
 
 
 /**
@@ -33,13 +30,13 @@ class LoginActivity : BaseActivity(), LoginInterface.view, View.OnClickListener 
     }
 
     override fun getLayoutId(): Int {
-        return R.layout.activity_main
+        return R.layout.activity_login
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         AndroidInjection.inject(this)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_login)
         this.btnSignIn = findViewById(R.id.btn_signIn)
         this.txtEmail = findViewById(R.id.txt_email)
         this.txtPassword = findViewById(R.id.txt_password)

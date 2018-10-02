@@ -9,7 +9,6 @@ import javax.inject.Inject
  */
 
 class LoginPresenter<V: LoginInterface.view> @Inject internal constructor(private var view: V) : BasePresenter<V>(), LoginInterface.presenter<V> {
-//    private lateinit var view: LoginInterface.view
     private var email: String = ""
     private var password: String = ""
 
